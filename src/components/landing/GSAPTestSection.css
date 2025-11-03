@@ -1,12 +1,12 @@
 /* src/components/landing/GSAPTestSection.css */
 
 .gsap-test-section {
-    /* Fondo claro para que se distinga del resto de tu web */
+    
     background-color: #f0f4f8;
     padding: 100px 0;
     overflow: hidden;
     
-    /* ¡Altura extra para tener espacio para hacer scroll! */
+   
     min-height: 120vh; 
 }
 
@@ -18,7 +18,7 @@
 
 .gsap-test-section .section-header h2,
 .gsap-test-section .section-header p {
-    color: var(--color-dark-navy); /* Texto oscuro para fondo claro */
+    color: var(--color-dark-navy); 
 }
 
 .test-grid {
@@ -40,10 +40,5 @@
     font-weight: bold;
     color: var(--color-dark-navy);
     
-    /*
-      ¡IMPORTANTE!
-      GSAP animará 'scale' y 'opacity', que están puestas en el JS.
-      Las cajas están en su estado FINAL por defecto.
-      GSAP las animará 'DESDE' (from) el estado inicial (scale: 0.1).
-    */
+    
 }

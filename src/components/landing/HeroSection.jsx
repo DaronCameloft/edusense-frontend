@@ -43,7 +43,7 @@ function HeroSection() {
     fetchWeather();
     
     
-    const interval = setInterval(fetchWeather, 600000);
+    const interval = setInterval(fetchWeather, 43200000);
     
     return () => clearInterval(interval);
   }, []);
