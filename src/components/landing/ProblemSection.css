@@ -1,0 +1,146 @@
+/* src/components/landing/ProblemSection.css */
+
+.problem-section {
+    background-color: var(--bg-primary); /* Fondo oscuro principal */
+    padding: 100px 0;
+    overflow: hidden; /* Para que las animaciones AOS no desborden */
+}
+
+.problem-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.problem-content {
+    text-align: left;
+}
+
+.tagline {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--accent); /* Verde brillante */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.problem-content h2 {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+}
+
+.problem-content .subtitle {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.problem-content .hook {
+    font-size: 1.1em;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary); /* Fondo de tarjeta */
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+}
+
+/* --- Estilos de la Tarjeta de Problema --- */
+.problem-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.problem-card {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(249, 168, 37, 0.3); /* Borde de alerta (naranja) */
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    font-family: 'Courier New', Courier, monospace; /* Para un look "terminal" */
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(249, 168, 37, 0.2);
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.light {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.light.warning {
+    background-color: #F9A825; /* Naranja/Amarillo de Alerta */
+    box-shadow: 0 0 10px #F9A825;
+}
+
+.card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.metric .label {
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+.metric .value {
+    font-size: 2em;
+    font-weight: bold;
+    display: block;
+}
+.metric .value .unit {
+    font-size: 0.5em;
+    color: var(--text-secondary);
+    margin-left: 5px;
+}
+.metric .value.danger {
+    color: #E53935; /* Rojo Peligro */
+}
+.metric .value.warning {
+    color: #F9A825; /* Naranja Alerta */
+}
+
+.card-footer {
+    background-color: rgba(249, 168, 37, 0.1);
+    padding: 12px 15px;
+    color: #F9A825;
+    font-size: 0.9em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .problem-layout {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 40px;
+    }
+    .problem-content {
+        text-align: center;
+    }
+    .problem-content h2 {
+        font-size: 2.2em;
+    }
+    .problem-visual {
+        order: -1; /* Mover la tarjeta visual arriba en móviles */
+    }
+}
+

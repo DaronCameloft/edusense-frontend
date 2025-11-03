@@ -1,0 +1,183 @@
+/* src/components/landing/TechSection.css (Versión Actualizada) */
+
+.tech-section {
+    background-color: var(--bg-primary);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.tech-section .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+.tech-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 60px;
+    position: relative; 
+}
+
+/* --- Barra Lateral Sticky --- */
+.tech-sticky-nav {
+    position: sticky;
+    top: 120px; 
+    align-self: start; 
+    height: auto;
+}
+
+.tech-sticky-nav h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(136, 146, 176, 0.3);
+    padding-bottom: 10px;
+}
+
+.step-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* 1. Añade 'cursor: pointer' a todo el 'li' */
+.step-list .step {
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* La 'a' ya no necesita 'href', es solo para estilo */
+.step-list .step a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.step-list .step:hover {
+    background-color: var(--bg-secondary);
+}
+
+.step-list .step span {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.step-list .step h4 {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.step-list .step p {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* La clase 'active' ahora se aplica al 'li' */
+.step-list .step.active {
+    background-color: var(--bg-secondary);
+}
+.step-list .step.active h4 {
+    color: var(--accent);
+}
+
+/* --- Contenido de la Derecha --- */
+.tech-scroll-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+}
+
+.tech-step-content {
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(136, 146, 176, 0.2);
+    /* Ya no forzamos la altura mínima, se adaptará al contenido */
+}
+
+.tech-step-content h4 {
+    font-size: 1.8em;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+/* ... (estilos de 'p', 'ul', 'li' sin cambios) ... */
+.tech-step-content p {
+    font-size: 1.05em;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+.tech-step-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+.tech-step-content li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    font-size: 1em;
+}
+.tech-step-content li::before {
+    content: '✓'; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* 2. Reemplaza el estilo del 'placeholder' por el del 'diagrama' */
+.visual-diagram {
+    margin-top: 30px;
+    background-color: #0B192E; /* Fondo oscuro como en tu mockup */
+    border-radius: 8px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.visual-diagram img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto;
+    display: block;
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+}
+
+/* ... (estilos de 'packet-tracer-card' y 'responsive' sin cambios) ... */
+.packet-tracer-card {
+    min-height: auto; 
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(41, 255, 198, 0.05), rgba(41, 255, 198, 0.01));
+}
+.packet-tracer-card .btn-secondary {
+    background-color: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+.packet-keytracer-card .btn-secondary:hover {
+    background-color: var(--accent);
+    color: var(--color-dark-navy);
+}
+
+@media (max-width: 900px) {
+    .tech-layout {
+        grid-template-columns: 1fr; 
+    }
+    .tech-sticky-nav {
+        position: relative;
+        top: 0;
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,139 @@
+/* src/components/landing/UseCasesSection.css */
+
+.use-cases-section {
+    /* Alternamos de nuevo el fondo */
+    background-color: var(--bg-secondary);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.use-cases-section .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.tabs-container {
+    max-width: 800px; /* Limitamos el ancho del componente de tabs */
+    margin: 0 auto;
+    background-color: var(--bg-primary); /* Fondo más oscuro para el componente */
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(136, 146, 176, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* --- Cabecera de Botones --- */
+.tab-header {
+    display: flex;
+    justify-content: flex-start; /* Alineados a la izquierda */
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgba(136, 146, 176, 0.2);
+}
+
+.tab-button {
+    background-color: transparent;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 3px solid transparent; /* Borde inferior inactivo */
+    margin-bottom: -2px; /* Alinear con el borde del header */
+}
+
+.tab-button:hover {
+    color: var(--text-primary);
+}
+
+.tab-button.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent); /* Borde inferior activo */
+}
+
+/* --- Área de Contenido --- */
+.tab-content-area {
+    padding: 10px;
+    min-height: 250px; /* Damos altura fija para evitar "saltos" */
+}
+
+.tab-content {
+    /* Por defecto, todos ocultos */
+    display: none;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-content.active {
+    /* El activo se muestra */
+    display: block;
+    opacity: 1;
+}
+
+.tab-content h4 {
+    font-size: 1.5em;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.tab-content p {
+    font-size: 1.05em;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.tab-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+.tab-content li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    font-size: 1em;
+}
+
+.tab-content li::before {
+    content: '✓'; /* Icono de check */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* --- Animación de Fundido --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .tab-header {
+        flex-direction: column; /* Botones uno encima de otro */
+        border-bottom: none;
+    }
+    .tab-button {
+        border-bottom: 2px solid rgba(136, 146, 176, 0.2);
+        margin-bottom: 0;
+        text-align: left;
+    }
+    .tab-button.active {
+        border-bottom-color: var(--accent);
+    }
+    .tab-content-area {
+        min-height: auto; /* Altura automática en móvil */
+    }
+}

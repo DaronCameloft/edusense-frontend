@@ -1,0 +1,56 @@
+/* src/components/landing/CTASection.css */
+
+.cta-section {
+    /* Fondo oscuro principal para contrastar con la sección anterior */
+    background-color: var(--bg-primary); 
+    padding: 100px 0;
+    text-align: center;
+    /* Un borde sutil para separarlo de la sección de arriba */
+    border-top: 1px solid rgba(136, 146, 176, 0.2); 
+}
+
+.cta-section .container {
+    max-width: 700px; /* Limitamos el ancho para que el texto sea más fácil de leer */
+}
+
+.cta-section .tagline {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.cta-section h2 {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.cta-buttons .btn-primary,
+.cta-buttons .btn-secondary {
+    /* Nuestros estilos globales de botones ya funcionan aquí */
+    margin: 10px; /* Añadimos un poco de margen */
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    /* En móvil, hacemos que los botones ocupen todo el ancho */
+    .cta-buttons .btn-primary,
+    .cta-buttons .btn-secondary {
+        display: block;
+        width: 80%; /* No 100% para que no se vea pegado */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

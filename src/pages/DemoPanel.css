@@ -1,0 +1,154 @@
+/* src/pages/DemoPanel.css (Versión Final) */
+.dashboard-layout {
+    display: flex;
+    background-color: var(--bg-primary); 
+    min-height: 100vh;
+}
+
+.dashboard-main {
+    margin-left: 260px; 
+    flex-grow: 1;
+    /* Ajusta este padding-top. 
+      Debe ser suficiente para que el .status-light-container no choque con el título.
+      (status-light está en top: 35px)
+    */
+    padding: 60px 40px 30px 40px; 
+    width: calc(100% - 260px);
+    position: relative; 
+}
+
+
+/* --- ESTADO (INDEPENDIENTE) --- */
+.status-light-container {
+    position: absolute;
+    top: 35px;  /* Controla la posición vertical del estado */
+    right: 40px; /* Lo pega a la esquina derecha */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.status-light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+/* --- NUEVA BARRA DE TÍTULO (DEBAJO DEL ESTADO) --- */
+.main-title-bar {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Espacio entre el Título y el Selector */
+    /* Lo separamos de las tarjetas de abajo */
+    margin-bottom: 30px; 
+    border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+    padding-bottom: 20px;
+}
+
+.main-title-bar h1 {
+    font-size: 2.2em; /* Controla el TAMAÑO del título aquí */
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    /* Permitimos que el título se parta si es muy largo */
+    white-space: normal; 
+}
+
+
+/* --- SELECTOR DE AULAS (Sin cambios de estilo) --- */
+.aula-selector {
+    position: relative; 
+    /* Lo empujamos un poco si el título es grande */
+    margin-top: 5px; 
+    flex-shrink: 0; /* No dejes que se encoja */
+}
+
+.selector-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--bg-secondary);
+    border: 1px solid rgba(136, 146, 176, 0.3);
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-family: var(--font-family);
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.selector-button:hover {
+    color: var(--text-primary);
+    border-color: var(--accent);
+}
+.selector-button svg {
+    transition: transform 0.3s ease;
+}
+
+.aula-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 280px;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid rgba(136, 146, 176, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 100;
+    overflow: hidden;
+}
+
+.aula-searchbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+    color: var(--text-secondary);
+}
+.aula-searchbar input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: 1em;
+}
+
+.aula-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.aula-item, .aula-item-none {
+    padding: 12px 15px;
+    font-size: 0.95em;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.aula-item:hover {
+    background-color: rgba(41, 255, 198, 0.1);
+    color: var(--accent);
+}
+.aula-item-none {
+    cursor: default;
+    font-style: italic;
+}
+
+
+/* --- Grid de Widgets --- */
+.widgets-grid {
+    padding-top: 0; /* Ya no necesita padding-top, el title-bar da el espacio */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}

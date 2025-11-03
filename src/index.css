@@ -1,68 +1,64 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+
+/* --- AÑADE ESTAS LÍNEAS PARA LENIS --- */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+/* ------------------------------------- */
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+    /* Paleta de Colores de EduSense (Basada en tu logo y mockup) */
+    --color-dark-navy: #0B192E;   /* Fondo principal oscuro */
+    --color-primary-teal: #4DC4C4; /* Acento principal del logo */
+    --color-accent-green: #29FFC6; /* Verde brillante del mockup */
+    --color-text-light: #E0EBFB; /* Texto principal claro */
+    --color-text-secondary: #8892b0;/* Texto secundario gris/azulado */
+    --color-white: #FFFFFF;
+    
+    /* Variables semánticas */
+    --bg-primary: var(--color-dark-navy);
+    --bg-secondary: #12213A; /* Un azul un poco más claro para cards */
+    --text-primary: var(--color-text-light);
+    --text-secondary: var(--color-text-secondary);
+    --accent: var(--color-accent-green);
+    
+    --font-family: 'Inter', sans-serif;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    font-family: var(--font-family);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary); /* Cambiado a texto claro por defecto */
+    background-color: var(--bg-primary); /* Cambiado a fondo oscuro */
+    overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* El resto de tus estilos (container, h1, etc.) pueden ir aquí.
+   Asegúrate de que los colores (h1, p, etc.) usen las nuevas variables. */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h1, h2, h3, h4 {
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+html {
+  scroll-behavior: smooth;
 }
+/* ... (el resto de tus estilos) ... */

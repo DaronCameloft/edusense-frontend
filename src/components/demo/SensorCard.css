@@ -1,0 +1,70 @@
+/* src/components/demo/SensorCard.css */
+.sensor-card-widget {
+    background-color: var(--bg-secondary);
+    border: 1px solid rgba(136, 146, 176, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.sensor-card-widget.alerta {
+    border-color: #F9A825; 
+    box-shadow: 0 0 15px rgba(249, 168, 37, 0.2);
+}
+.sensor-card-widget.peligro {
+    border-color: #E53935; 
+    box-shadow: 0 0 15px rgba(229, 57, 53, 0.2);
+}
+
+.card-header {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-body {
+    display: flex;
+    align-items: baseline;
+    margin-top: 10px;
+}
+
+.card-value {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+
+.alerta .card-value {
+    color: #F9A825;
+}
+.peligro .card-value {
+    color: #E53935;
+}
+
+.card-unit {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-left: 8px;
+}
+
+
+.text-based .card-body {
+    
+    justify-content: center;
+    align-items: center;
+ 
+    margin-top: 15px; 
+}
+
+.text-based .card-value {
+    
+    font-size: 3em; 
+}
+
+
+.text-based .card-unit:empty {
+    display: none;
+}

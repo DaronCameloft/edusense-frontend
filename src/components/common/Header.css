@@ -1,0 +1,67 @@
+/* src/components/common/Header.css */
+header {
+    background-color: transparent;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s;
+}
+
+header.scrolled {
+    padding: 15px 0;
+    background-color: rgba(11, 25, 46, 0.85); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: 35px; 
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 35px;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--accent); 
+}
+
+
+.btn-nav-demo {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--accent);
+    color: var(--color-dark-navy) !important; 
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.btn-nav-demo:hover {
+    background-color: var(--color-white);
+    color: var(--color-dark-navy) !important;
+}

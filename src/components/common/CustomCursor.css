@@ -1,0 +1,66 @@
+/* src/components/common/CustomCursor.css */
+
+/* Ocultar el cursor predeterminado */
+* {
+    cursor: none !important;
+}
+
+/* Cursor principal (bolita pequeña) */
+.custom-cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(77, 196, 196, 0.8); /* Verde celeste con transparencia */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+    mix-blend-mode: screen; /* Efecto de fusión luminoso */
+}
+
+/* Cursor al hacer clic */
+.custom-cursor.clicking {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* Círculo exterior (seguidor) */
+.custom-cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(77, 196, 196, 0.4);
+    background-color: rgba(77, 196, 196, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+    backdrop-filter: blur(2px);
+}
+
+/* Círculo exterior al hacer clic */
+.custom-cursor-follower.clicking {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(77, 196, 196, 0.2);
+}
+
+/* Efecto hover en elementos interactivos */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor,
+.btn-primary:hover ~ .custom-cursor,
+.btn-secondary:hover ~ .custom-cursor {
+    width: 16px;
+    height: 16px;
+    background-color: rgba(77, 196, 196, 1);
+}
+
+a:hover ~ .custom-cursor-follower,
+button:hover ~ .custom-cursor-follower,
+.btn-primary:hover ~ .custom-cursor-follower,
+.btn-secondary:hover ~ .custom-cursor-follower {
+    width: 60px;
+    height: 60px;
+    border-color: rgba(77, 196, 196, 0.6);
+}
